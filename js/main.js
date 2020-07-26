@@ -60,7 +60,12 @@ var pgal = {
         this.ny = o.offsetTop;
         this.nw = o.offsetWidth;
         this.nh = o.offsetHeight;
-        this.zoom = this.nh / 1800;
+        // Different size of images if it is a mobile device or not
+        if (mobileCheck()) {
+            this.zoom = this.nh / 1200;
+        }else{
+            this.zoom = this.nh / 1800; 
+        }
     },
     run: function() {
         pgal.cx += (pgal.xm - pgal.cx) * .1;
