@@ -19,6 +19,13 @@ a.about{text-decoration:none;color:black;}
 /* Gallery */
 .example{position:absolute;left:0;top:0;width:100%;height:100%;overflow:hidden;z-index:1}
 .example div{position:absolute;cursor:pointer;left:100%;max-width:750px;-webkit-filter:drop-shadow(5px 5px 5px #222);filter:drop-shadow(5px 5px 5px #222)}
+@-moz-document url-prefix() {
+	/* Target only mozilla firefox rendering engine */
+	@media only screen and (max-width: 600px)  { 
+	/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+	.example div{filter:drop-shadow(0 0)}
+	}
+}
 .intro{line-height:2em;position:absolute;text-align:center;left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}
 .example span{position:absolute}
 
