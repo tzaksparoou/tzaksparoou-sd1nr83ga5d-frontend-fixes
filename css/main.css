@@ -1,0 +1,125 @@
+/* High Holdings Gallery */
+* {box-sizing: border-box;}
+html,body{height:100%;width:100%;margin:0;padding:0;font-family:'TimesCond',serif;overflow:hidden;text-size-adjust:none;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none}
+
+/* Webm Background*/
+body { background-attachment: fixed;   background-size: cover;}
+.bgvideo {min-width: 110%; min-height: 110%; width: auto; height: auto; z-index: -100; position: relative;  left: 40%;   top: 40%; -webkit-transform: translate(-40%, -40%); transform: translate(-40%, -40%); display: none;   }
+video { min-width: 110%; min-height: 110vh;  }
+
+label{cursor:pointer;padding-right:50px}
+.logo{width:80px}
+[type=radio]{position:absolute;opacity:0;width:0;height:0}
+input~span{opacity:.3}
+input:checked~span{opacity:1.0}
+.highlight span{width:99%!important}
+button{text-decoration:none;color:black}
+a.about{text-decoration:none;color:black;}
+
+/* Gallery */
+.example{position:absolute;left:0;top:0;width:100%;height:100%;overflow:hidden;z-index:1}
+.example div{position:absolute;cursor:pointer;left:100%;max-width:750px;-webkit-filter:drop-shadow(5px 5px 5px #222);filter:drop-shadow(5px 5px 5px #222)}
+.intro{line-height:2em;position:absolute;text-align:center;left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}
+.example span{position:absolute}
+
+.caption{display:flex;font-size:1.0em;justify-content:center;align-items:center;opacity:0;text-align:center}
+.caption a{color:white;}
+.caption.active{opacity:100%;transition:opacity 3s}
+.name{font-style:normal;color:white;text-decoration:none;padding-top:15px}
+.highlight{position:absolute;bottom:0;left:0;padding:0 0 20px 20px;z-index:10}
+
+/* Tags */
+.tag-group{padding-bottom:.5em}
+.tag{font-family:"ArialNarrow",Helvetica,Arial,sans-serif;border:1px lightgrey solid;font-size:.75rem;background:#f0f0f0;color:grey;padding:.1875rem .5rem;border-radius:1.125rem;text-transform:uppercase;display:inline-block!important;text-decoration:none;transition:all .3s ease-in-out}
+.tag:hover{background:white}
+
+p.gap{display:block;padding-bottom:10px;}
+img.end{transform:translate(-5px,0px);width:50px!important;}
+
+/* Modal Articles */
+.modalDialog { position: fixed;    top: 0; right: 0; bottom: 0; left: 0; background: rgba(255, 255, 255, 0.8); z-index: 99999; opacity:0; -webkit-transition: opacity 400ms ease-in; -moz-transition: opacity 400ms ease-in; transition: opacity 400ms ease-in;pointer-events: none; }/* Fullscreen BG */
+.modalDialog:target {opacity:1;pointer-events: auto; }
+.modalDialog > div {width: 40%; height:80vh;overflow-x: hidden;overflow-y:auto;margin: 5% auto; padding-right:10px;font-size:1.2em; -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(15%, rgba(0, 0, 0, 1)), color-stop(85%, rgba(0, 0, 0, 1)), color-stop(100%, rgba(0, 0, 0, 0)));}
+.modalDialog a{text-decoration:none;color:black;font-weight:bold;}
+
+header{position:sticky;top:0;left:0;right:0;padding-top:20px;text-align:left;z-index: 99999999; }
+.close{order:2;margin-left:auto;float:right;font-size:2vw;transition:all .3s ease-in-out/* hover */}
+.close:hover,.close:focus{text-decoration:none;cursor:pointer;transition:all .3s ease-in-out}
+.close:hover{color: grey;}
+
+.modalDialog img{position:relative;width:100%}
+.projectdesc{font-size:.8em}
+
+/* Modal About */
+.modalAbout {position: fixed;    top: 0; right: 0; bottom: 0; left: 0; background: rgba(255, 255, 255, 0.8); z-index: 99999; opacity:0; -webkit-transition: opacity 400ms ease-in; -moz-transition: opacity 400ms ease-in; transition: opacity 400ms ease-in;pointer-events: none; }/* Fullscreen BG */
+.modalAbout:target {opacity:1;pointer-events: auto;}
+.modalAbout > div {width: 40%; height:80vh;overflow-x: hidden;overflow-y:auto;margin: 5% auto; padding-right:10px;font-size:1.2em; -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(15%, rgba(0, 0, 0, 1)), color-stop(85%, rgba(0, 0, 0, 1)), color-stop(100%, rgba(0, 0, 0, 0)));}
+.modalAbout a{text-decoration:none;color:black;font-weight:bold;}
+
+/* Youtube Article */
+.video-container{overflow:hidden;position:relative;width:100%}
+.video-container::after{padding-top:56.25%;display:block;content:''}
+.video-container iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+
+
+/* Loading */
+.loadingDiv {position:absolute;margin:0;top:0;left:0;width: 100%;height: 100vh; display: table; background-color:#e8e8e8;z-index:10000;}
+.loadingDiv .image-container {text-align: center; vertical-align: middle; display: table-cell;}
+.loadingDiv .image-container img {max-width: 100px;}
+
+@keyframes spin {
+ from{
+ transform: rotateY(0deg);
+ moz-transform: rotateY(0deg); //Firefox
+ ms-transform: rotateY(0deg); //Microsoft Browsers
+ }
+ to{
+ transform: rotateY(360deg);
+ moz-transform: rotateY(360deg); //Firefox
+ ms-transform: rotateY(360deg); //Microsoft Browsers
+ }
+}
+@-webkit-keyframes spin{
+ from{-webkit-transform: rotateY(0deg);}
+ to{-webkit-transform: rotateY(360deg);}
+}
+.imageSpin{
+ animation-name: spin;
+ animation-timing-function: linear;
+ animation-iteration-count: infinite;
+ animation-duration: 1s;
+ -webkit-animation-name: spin;
+ -webkit-animation-timing-function: linear;
+ -webkit-animation-iteration-count: infinite;
+ -webkit-animation-duration: 1s;
+}
+
+/* Media Queries */
+@media (max-width: 1280px) {
+.close{font-size:6vw;}
+.modaltext{width:50%}
+}
+@media (max-width: 768px) {
+	.close{font-size:5vw;}
+.modalDialog>div{width:90%}
+.modalAbout>div{width:90%}
+.highlight span{display:block;width:100%;margin-bottom:-15px}
+}
+@media (max-width: 640px) {
+.highlight span{display:block;width:100%;margin-bottom:-15px}
+.example img{max-height:95%;max-width:120%}
+}
+@media (max-width: 380px) {
+.close{font-size:8vw;}
+}
+
+
+/* ================ Fonts ================  */
+@font-face {font-family: 'TimesCond'; src: url('/css/TimesCond.woff2') format('woff2'); font-weight: normal;font-style: normal; }
+@font-face {font-family: 'TimesCondItalic'; src: url('css/TimesCond.woff2') format('woff2');font-weight: normal;font-style: italic!important;}
+@font-face {font-family: 'ArialNarrow';src: url('css/arialn.woff2') format('woff2'); font-weight: normal;font-style: italic; }
+@font-face {font-family: 'ArialNarrowItalic';src: url('css/arialni.woff2') format('woff2');font-weight: normal;font-style: italic; }
+
+
+
+

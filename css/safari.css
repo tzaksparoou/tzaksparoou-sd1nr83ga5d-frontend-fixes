@@ -1,0 +1,4 @@
+.example img {
+    -webkit-filter: none !important;
+    filter: none !important;
+}
