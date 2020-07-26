@@ -34,6 +34,7 @@ $('input[name$="group1"]').click(function() {
 function modalClose() {
     // debugger;
     if (location.hash.includes("#")) {
+        stopvideo();
         location.hash = '';
     }
 }
@@ -47,7 +48,7 @@ document.addEventListener('keyup', function(e) {
 var allModals = document.querySelectorAll('.modalDialog');
 allModals.forEach(function(mo) {
     mo.addEventListener('click', function(e) {
-        if (e.target.classList.value === "modalDialog") {
+        if (e.target.classList.value === "modalDialog" || e.target.classList.value === "close") {
             modalClose();
         }
     });
@@ -74,7 +75,8 @@ document.querySelector(".modalAbout").addEventListener('click', function(e) {
 
 //stop video
 function stopvideo() {
-    var frame = document.getElementsByClassName("youtube-video");
+    // var frame = document.getElementsByClassName("youtube-video");
+    var frame = document.getElementsByClassName("video-container");
 
     for (var i = 0; i < frame.length; i++) {
         frame.item(i).contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
