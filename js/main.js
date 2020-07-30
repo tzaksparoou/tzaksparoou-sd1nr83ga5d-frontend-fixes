@@ -41,7 +41,7 @@ var pgal = {
     xt: 0,
     yt: 0,
     zt: 0,
-    imageSpread: 10,
+    imageSpread: 10, 
 
     init: function() {
         this.cx = this.nw / 2;
@@ -62,7 +62,7 @@ var pgal = {
         this.nh = o.offsetHeight;
         // Different size of images if it is a mobile device or not
         if (mobileCheck()) {
-            this.zoom = this.nh / 1200;
+            this.zoom = this.nh / 1000;
         }else{
             this.zoom = this.nh / 1800; 
         }
@@ -108,11 +108,6 @@ var pgal = {
                     var H = d * this.h * pgal.zoom;
                     this.obs.left = to_px(X - W * .5);
                     this.obs.top = to_px(Y - H * .5);
-                    // this.obs.top = to_px(Y - H);
-                    if (mobileCheck()) {
-                        var topPos = (window.innerHeight - this.obj.querySelector('img').height) * 0.2;
-                        this.obs.top = to_px(topPos);
-                    }
                     this.obs.width = to_px(W);
                     this.obs.height = to_px(H);
                 } else {
