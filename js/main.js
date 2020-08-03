@@ -15,7 +15,7 @@ if (safari) {
     document.querySelector("head").insertAdjacentElement("beforeend", style);
 }
 
-//Randomises BG video
+//Shows image as a background for mobile devices or a random video for larger screens.
 if (mobileCheck()) {
     $(function () { $('.bgimage').show(); });
 } else {
