@@ -7,6 +7,9 @@ body { background-attachment: fixed;   background-size: cover;}
 .bgvideo {min-width: 110%; min-height: 110%; width: auto; height: auto; z-index: -100; position: relative;  left: 40%;   top: 40%; -webkit-transform: translate(-40%, -40%); transform: translate(-40%, -40%); display: none;   }
 video { min-width: 110%; min-height: 110vh;  }
 
+/* Image Background */
+.bgimage {min-width: 110%; min-height: 110%; width: auto; height: auto; z-index: -100; position: relative;  left: 40%;   top: 40%; -webkit-transform: translate(-40%, -40%); transform: translate(-40%, -40%); display: none;   }
+
 label{cursor:pointer;padding-right:50px}
 .logo{width:80px}
 [type=radio]{position:absolute;opacity:0;width:0;height:0}
@@ -43,8 +46,8 @@ p.gap{display:block;padding-bottom:10px;}
 img.end{transform:translate(-5px,0px);width:50px!important;}
 
 /* Modal Articles */
-.modalDialog { position: fixed;    top: 0; right: 0; bottom: 0; left: 0; background: rgba(255, 255, 255, 0.8); z-index: 99999; opacity:0; -webkit-transition: opacity 400ms ease-in; -moz-transition: opacity 400ms ease-in; transition: opacity 400ms ease-in;pointer-events: none; }/* Fullscreen BG */
-.modalDialog:target {opacity:1;pointer-events: auto; }
+.modalDialog { position: fixed;    top: 0; right: 0; bottom: 0; left: 0; background: rgba(255, 255, 255, 0.8); z-index: 99999; display: none; -webkit-transition: opacity 400ms ease-in; -moz-transition: opacity 400ms ease-in; transition: opacity 400ms ease-in;pointer-events: none; }/* Fullscreen BG */
+.modalDialog:target {opacity:1;pointer-events: auto; display: block;}
 .modalDialog > div {width: 40%; height:80vh;overflow-x: hidden;overflow-y:auto;margin: 5% auto; padding-right:10px;font-size:1.2em; -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(15%, rgba(0, 0, 0, 1)), color-stop(85%, rgba(0, 0, 0, 1)), color-stop(100%, rgba(0, 0, 0, 0)));}
 .modalDialog a{text-decoration:none;color:black;font-weight:bold;}
 
@@ -57,8 +60,8 @@ header{position:sticky;top:0;left:0;right:0;padding-top:20px;text-align:left;z-i
 .projectdesc{font-size:.8em}
 
 /* Modal About */
-.modalAbout {position: fixed;    top: 0; right: 0; bottom: 0; left: 0; background: rgba(255, 255, 255, 0.8); z-index: 99999; opacity:0; -webkit-transition: opacity 400ms ease-in; -moz-transition: opacity 400ms ease-in; transition: opacity 400ms ease-in;pointer-events: none; }/* Fullscreen BG */
-.modalAbout:target {opacity:1;pointer-events: auto;}
+.modalAbout {position: fixed;    top: 0; right: 0; bottom: 0; left: 0; background: rgba(255, 255, 255, 0.8); z-index: 99999; display: none; -webkit-transition: opacity 400ms ease-in; -moz-transition: opacity 400ms ease-in; transition: opacity 400ms ease-in;pointer-events: none; }/* Fullscreen BG */
+.modalAbout:target {opacity:1;pointer-events: auto; display: block;}
 .modalAbout > div {width: 40%; height:80vh;overflow-x: hidden;overflow-y:auto;margin: 5% auto; padding-right:10px;font-size:1.2em; -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(15%, rgba(0, 0, 0, 1)), color-stop(85%, rgba(0, 0, 0, 1)), color-stop(100%, rgba(0, 0, 0, 0)));}
 .modalAbout a{text-decoration:none;color:black;font-weight:bold;}
 

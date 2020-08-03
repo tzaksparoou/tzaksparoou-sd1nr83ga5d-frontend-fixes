@@ -1,4 +1,4 @@
-"us strict";
+"use strict";
 
 /**
  * settings {Object} - All the settings
