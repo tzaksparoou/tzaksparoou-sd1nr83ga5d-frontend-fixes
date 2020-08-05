@@ -4,6 +4,8 @@ function mobileCheck() {
     return check;
 };
 
+var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
 
 var safari = /(?=.*safari)(?=.*mac)/i.test(window.navigator.userAgent);
 
@@ -69,7 +71,7 @@ var pgal = {
         this.nh = o.offsetHeight;
         // Different size of images if it is a mobile device or not
         if (mobileCheck()) {
-            if (!navigator.userAgent.indexOf("Chrome") > -1) {
+            if (!isChrome) {
                 this.zoom = this.nh / 800;
             } else {
                 this.zoom = this.nh / 1000;
@@ -80,7 +82,7 @@ var pgal = {
     },
     run: function () {
         if (mobileCheck() 
-        && !navigator.userAgent.indexOf("Chrome") > -1
+        && !isChrome > -1
         ) {
             pgal.cx += (pgal.xm - pgal.cx) * .5;
             pgal.cy += (pgal.ym - pgal.cy) * .5;
