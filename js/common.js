@@ -75,8 +75,8 @@ document.querySelector(".modalAbout").addEventListener('click', function(e) {
 
 //stop video
 function stopvideo() {
-    // var frame = document.getElementsByClassName("youtube-video");
-    var frame = document.getElementsByClassName("video-container");
+    // let frame = document.getElementsByClassName("youtube-player");
+    let frame = document.getElementsByClassName("video-container");
 
     for (var i = 0; i < frame.length; i++) {
         frame.item(i).contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
