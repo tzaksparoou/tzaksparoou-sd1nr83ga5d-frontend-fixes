@@ -50,6 +50,6 @@
         margin-left: -36px;
         margin-top: -36px;
         position: absolute;
-        background: url("/img/play-button.png") no-repeat;
+        background: url("../img/play-button.png") no-repeat;
         cursor: pointer;
     }
