@@ -23,5 +23,6 @@ document.addEventListener("DOMContentLoaded",
         iframe.setAttribute("frameborder", "0");
         iframe.setAttribute("allowfullscreen", "1");
         iframe.setAttribute("class", "video-container");
+        iframe.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
         this.parentNode.replaceChild(iframe, this);
     }
