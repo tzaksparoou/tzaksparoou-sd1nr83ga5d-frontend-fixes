@@ -81,9 +81,7 @@ var pgal = {
         }
     },
     run: function () {
-        if (mobileCheck() 
-        && !isChrome > -1
-        ) {
+        if (mobileCheck() && !isChrome) {
             pgal.cx += (pgal.xm - pgal.cx) * .5;
             pgal.cy += (pgal.ym - pgal.cy) * .5;
             pgal.x += (pgal.xt - pgal.x) * .4;
