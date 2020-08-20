@@ -6,6 +6,6 @@
  * - compareTo {Number}  -  Total number of clicks for image load. (3), one image will get load every 3 click
  */
 var settings = {
-    firstNumberOfImages: 15,
+    firstNumberOfImages: 14,
     compareTo: 1
 }
