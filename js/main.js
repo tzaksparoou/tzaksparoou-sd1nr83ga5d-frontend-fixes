@@ -21,10 +21,9 @@ if (isSafari) {
 $(function () {
     var randomVideo = Math.floor(Math.random() * $('.bgvideo').length);
     if (mobileCheck()) {
-        $('.bgvideo').eq(randomVideo).removeAttr("loop").css("filter", "").show();
+        $('.bgvideo').eq(randomVideo).removeAttr("loop").show();
     } else {
-        // $('.bgvideo').eq(randomVideo).show();
-        $('.bgvideo').eq(randomVideo).attr("autoplay", "").attr("preload", true).css("filter", "").show();
+        $('.bgvideo').eq(randomVideo).attr("autoplay", "").attr("preload", true).show();
     }
 });
 var $$ = document.querySelectorAll.bind(document);
@@ -135,8 +134,8 @@ var pgal = {
                 this.obs.width = to_px(W);
                 this.obs.height = to_px(H);
                 if (isChrome || !mobileCheck()) {
-                    if (H < pgal.nh * .07) this.obj.style.opacity = 0.5;
-                    if (H >= pgal.nh * .07) this.obj.style.opacity = 1;
+                    if (H < pgal.nh * .07) {this.obj.style.opacity = 0.5; this.obj.style.filter = "blur(2px)";}
+                    if (H >= pgal.nh * .07) {this.obj.style.opacity = 1; this.obj.style.filter = "";}
                 }
 
             } else {

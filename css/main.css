@@ -35,7 +35,7 @@ a.about{text-decoration:none;color:black;}
 
 .caption{display:flex;font-size:1.0em;justify-content:center;align-items:center;opacity:0;text-align:center}
 .caption a{color:white;}
-.caption.active{opacity:100%;transition:opacity 3s}
+.caption.active{opacity:100%;transition:all 3s}
 .name{font-style:normal;color:white;text-decoration:none;padding-top:15px}
 .highlight{position:absolute;bottom:0;left:0;padding:0 0 20px 20px;z-index:10}
 .transition{transition: opacity .4s;-moz-transition: opacity .4s;-webkit-transition: opacity .4s;}
