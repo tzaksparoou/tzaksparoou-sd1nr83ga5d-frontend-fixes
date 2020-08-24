@@ -124,7 +124,7 @@ var pgal = {
         this.anim = function () {
             var f = 700 + this.z - pgal.z;
             if (f > 0) {
-                var d = 700 / f; // changes perspective angle (default:1000)
+                var d = settings.perspectiveAngleFactor / f; // changes perspective angle (default:1000)
                 var X = pgal.nw * .5 + ((this.x - pgal.x - pgal.cx) * d);
                 var Y = pgal.nh * .5 + ((this.y - pgal.y - pgal.cy) * d);
                 var W = d * this.w * pgal.zoom;
@@ -134,7 +134,7 @@ var pgal = {
                 this.obs.width = to_px(W);
                 this.obs.height = to_px(H);
                 if (isChrome || !mobileCheck()) {
-                    if (H < pgal.nh * .07) {this.obj.style.opacity = 0.5; this.obj.style.filter = "blur(2px)";}
+                    if (H < pgal.nh * .07) {this.obj.style.opacity = settings.bgImgOpacity; this.obj.style.filter = `blur(${settings.bgImgBlur}px)`;}
                     if (H >= pgal.nh * .07) {this.obj.style.opacity = 1; this.obj.style.filter = "";}
                 }
 
