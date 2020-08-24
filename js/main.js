@@ -7,9 +7,9 @@ function mobileCheck() {
 var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
 
-var safari = /(?=.*safari)(?=.*mac)/i.test(window.navigator.userAgent);
+var isSafari = /(?=.*safari)(?=.*mac)/i.test(window.navigator.userAgent);
 
-if (safari) {
+if (isSafari) {
     var style = document.createElement("link");
     style.rel = "stylesheet";
     style.href = "css/safari.css";
@@ -18,12 +18,15 @@ if (safari) {
 }
 
 //Shows image as a background for mobile devices or a random video for larger screens.
-if (mobileCheck()) {
-    $(function () { $('.bgimage').show(); });
-} else {
-    $(function () { var random = Math.floor(Math.random() * $('.bgvideo').length); $('.bgvideo').eq(random).show(); });
-}
-
+$(function () {
+    var randomVideo = Math.floor(Math.random() * $('.bgvideo').length);
+    if (mobileCheck()) {
+        $('.bgvideo').eq(randomVideo).removeAttr("loop").css("filter", "").show();
+    } else {
+        // $('.bgvideo').eq(randomVideo).show();
+        $('.bgvideo').eq(randomVideo).attr("autoplay", "").attr("preload", true).css("filter", "").show();
+    }
+});
 var $$ = document.querySelectorAll.bind(document);
 // -----------------------------------------------------------------------------------------------
 
@@ -131,11 +134,17 @@ var pgal = {
                 this.obs.top = to_px(Y - H * .5);
                 this.obs.width = to_px(W);
                 this.obs.height = to_px(H);
+                if (isChrome || !mobileCheck()) {
+                    if (H < pgal.nh * .07) this.obj.style.opacity = 0.5;
+                    if (H >= pgal.nh * .07) this.obj.style.opacity = 1;
+                }
+
             } else {
                 this.x = pgal.zoom * Math.random() * pgal.nw * pgal.imageSpread - pgal.nw;
                 this.y = pgal.zoom * Math.random() * pgal.nh * pgal.imageSpread - pgal.nh;
                 this.z += 10000;
                 this.obs.zIndex = Math.round(1000000 - this.z);
+
             }
 
         }

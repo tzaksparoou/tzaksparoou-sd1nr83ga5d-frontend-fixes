@@ -51,7 +51,7 @@ Ui.prototype.loopData = function() {
 Ui.prototype.createAndAppendElement = function(item, index, callback) {
     var divEl = createElement("div");
     divEl.setAttribute("id", "element-" + index);
-    divEl.setAttribute("class", "wrapper " + item.theme);
+    divEl.setAttribute("class", "transition wrapper " + item.theme);
     var imgEl = createElement("img");
     imgEl.src = item.image;
     var titleEl = createElement("p");
