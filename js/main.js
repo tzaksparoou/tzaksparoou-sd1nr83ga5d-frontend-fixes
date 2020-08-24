@@ -24,7 +24,8 @@ $(function () {
         $('.bgvideo').eq(randomVideo).removeAttr("loop").css("filter", "").show();
     } else {
         // $('.bgvideo').eq(randomVideo).show();
-        $('.bgvideo').eq(randomVideo).attr("autoplay", "").attr("preload", true).css("filter", "").show();
+        $('.bgvideo').eq(randomVideo).css("filter", "").show();
+        $('.bgvideo').get(randomVideo).play();
     }
 });
 var $$ = document.querySelectorAll.bind(document);
