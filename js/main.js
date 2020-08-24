@@ -25,6 +25,10 @@ $(function () {
     } else {
         // $('.bgvideo').eq(randomVideo).show();
         $('.bgvideo').eq(randomVideo).css("filter", "").show();
+        if(isSafari)
+        setTimeout(function() {
+            $('.bgvideo').get(randomVideo).play();
+         }, 50);
     }
 });
 var $$ = document.querySelectorAll.bind(document);
